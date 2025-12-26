@@ -88,6 +88,14 @@ Dedicated views for Daily and Weekly breakdowns.
 | :-----------------------------: | :-------------------------------: |
 | ![Today](SCRRENSHOTS/TODAY.png) | ![Weekly](SCRRENSHOTS/WEEKLY.png) |
 
+### 🚀 SOLAR SIMULATION 
+
+Representing real-time possitions of Earth and Moon using THREE.js
+
+|         Solar simulation 1      |          Solar Simulation 2       |
+| :-----------------------------: | :-------------------------------: |
+| ![Today](SCRRENSHOTS/SIM1.png)  | ![Weekly](SCRRENSHOTS/SIM2.png)   |
+
 ---
 
 ## 🚀 Installation & Setup
@@ -160,7 +168,7 @@ AI-POWERED-WEATHER-WEB-APP/
 ├── ABOUT/                  # Developer Info
 ├── CREADITS/               # Attributions
 ├── QUANTRA 0.5/            # AI & Backend Core
-│  ├── ai_mode.html / ai_mode.css # AI Front-end Part
+│   ├── ai_mode.html / ai_mode.css   # AI Front-end Part
 │   ├── main.py             # FastAPI App Entry Point
 │   ├── ai_brain.py         # Gemini Integration
 │   ├── decision_model.py   # Query Routing Logic
