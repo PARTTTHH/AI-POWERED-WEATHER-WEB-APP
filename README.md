@@ -94,7 +94,7 @@ Representing real-time possitions of Earth and Moon using THREE.js
 
 |         Solar simulation 1      |          Solar Simulation 2       |
 | :-----------------------------: | :-------------------------------: |
-| ![Today](SCRRENSHOTS/SIM1.png)  | ![Weekly](SCRRENSHOTS/SIM2.png)   |
+| ![Today](SCRRENSHOTS/solar_sim.png)  | ![Weekly](SCRRENSHOTS/solar_sim2.png)   |
 
 ---
 
