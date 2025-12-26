@@ -78,7 +78,7 @@ Comprehensive weather data including real-time metrics, solar/lunar simulations,
 
 |          Hourly Forecast           |       Interactive Map       |
 | :--------------------------------: | :-------------------------: |
-| ![Result](SCRRENSHOTS/RESULT1.png) | ![Map](SCRRENSHOTS/MAP.png) |
+| ![Result](SCRRENSHOTS/RESULT1.png) | ![Map](SCRRENSHOTS/RESULT3.png) |
 
 ### 📅 Advanced Forecasting
 
