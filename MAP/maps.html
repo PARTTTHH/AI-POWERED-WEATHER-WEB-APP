@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MAPS | AI POWERED WEATHER WEB APP</title>
+    <link rel="stylesheet" href="/static/map/maps.css?v=2" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/static/map/RESOURCES/APPLICATION_ICON/ICON3.png"
+    />
+  </head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <body>
+    <div class="main">
+      <nav class="navbar1">
+        <a href="/">HOME</a>
+        <a id="todayLink" href="#">TODAY</a>
+        <a id="weeklyLink" href="#">WEEKLY</a>
+        <a href="/maps">MAPS</a>
+        <a href="/about">ABOUT ME</a>
+      </nav>
+
+      <div class="theme-toggle">
+        <img
+          src="/static/map/RESOURCES/THEAME_SWITCHER/sun.png"
+          alt="Sun"
+          class="sun"
+        />
+        <img
+          src="/static/map/RESOURCES/THEAME_SWITCHER/MOON.png"
+          alt="Moon"
+          class="moon"
+        />
+        <div class="toggle-button" id="toggle-btn"></div>
+      </div>
+
+      <div class="MAPS">
+        <h2 class="map-title">MAPS :-</h2>
+        <div id="map" class="map"></div>
+      </div>
+    </div>
+
+    <div id="customAlert" class="custom-alert-overlay">
+      <div class="custom-alert-box">
+        <h2 class="custom-alert-title">NOTICE</h2>
+        <p class="custom-alert-message" id="alertMessage">
+          PLEASE SEARCH THE LOCATION FIRST!
+        </p>
+        <button class="custom-alert-btn" id="alertBtn">GOT IT</button>
+      </div>
+    </div>
+
+    <script>
+      const themeToggle = document.querySelector(".theme-toggle");
+      const body = document.body;
+      const mainDiv = document.querySelector(".main");
+
+      themeToggle.addEventListener("click", () => {
+        body.classList.toggle("dark");
+
+        if (body.classList.contains("dark")) {
+          body.style.backgroundImage =
+            "url('/static/map/RESOURCES/TEXTURES/MILKY_WAY.jpg')";
+          mainDiv.style.backgroundImage =
+            "url('/static/map/RESOURCES/TEXTURES/MILKY_WAY.jpg')";
+        } else {
+          body.style.backgroundImage =
+            "url('/static/map/RESOURCES/CLOUD_BG_2/CLOUD_2.jpg')";
+          mainDiv.style.backgroundImage =
+            "url('/static/map/RESOURCES/CLOUD_BG_2/CLOUD_2.jpg')";
+        }
+      });
+
+      var map = L.map("map").setView([19.076, 72.8777], 10); // Default Mumbai
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: "© OpenStreetMap",
+      }).addTo(map);
+
+      document
+        .getElementById("todayLink")
+        .addEventListener("click", showNavAlert);
+      document
+        .getElementById("weeklyLink")
+        .addEventListener("click", showNavAlert);
+
+      const customAlert = document.getElementById("customAlert");
+      const alertMessage = document.getElementById("alertMessage");
+      const alertBtn = document.getElementById("alertBtn");
+
+      function showAlert(msg) {
+        if (msg) alertMessage.textContent = msg;
+        customAlert.classList.add("show");
+      }
+
+      function closeAlert() {
+        customAlert.classList.remove("show");
+      }
+
+      alertBtn.addEventListener("click", closeAlert);
+
+      customAlert.addEventListener("click", (e) => {
+        if (e.target === customAlert) {
+          closeAlert();
+        }
+      });
+
+      function showNavAlert(e) {
+        e.preventDefault();
+        showAlert("PLEASE SEARCH THE LOCATION FIRST! FROM HOME PAGE");
+      }
+    </script>
+  </body>
+</html>

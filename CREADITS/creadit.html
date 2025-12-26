@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CREDITS | AI POWERED WEATHER WEB APP</title>
+    <link rel="stylesheet" href="/static/credits/creadit.css?v=2" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/static/credits/RESOURCES/APPLICATION_ICON/ICON3.png"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <nav class="navbar1">
+        <a href="/">HOME</a>
+        <a id="todayLink" href="#">TODAY</a>
+        <a id="weeklyLink" href="#">WEEKLY</a>
+        <a href="/maps">MAPS</a>
+        <a href="/about">ABOUT ME</a>
+      </nav>
+
+      <div class="theme-toggle">
+        <img
+          src="/static/credits/RESOURCES/THEAME_SWITCHER/sun.png"
+          alt="Sun"
+          class="sun"
+        />
+        <img
+          src="/static/credits/RESOURCES/THEAME_SWITCHER/MOON.png"
+          alt="Moon"
+          class="moon"
+        />
+        <div class="toggle-button" id="toggle-btn"></div>
+      </div>
+
+      <div class="credit-container">
+        <div class="glass-card">
+          <div class="credit-header">
+            <h1 class="heading">CREDITS & ACKNOWLEDGEMENTS</h1>
+            <p class="thanks">
+              THIS PROJECT IS MADE POSSIBLE WITH THE HELP OF OPEN-SOURCE TOOLS,
+              FREE RESOURCES, AND PUBLIC APIs. SINCERE THANKS TO THE CREATORS
+              AND PLATFORMS THAT SUPPORT LEARNING AND INNOVATION.
+            </p>
+          </div>
+
+          <div class="credit-content">
+            <div class="credit-section">
+              <h3><span class="icon">🌌</span> VISUAL ASSETS</h3>
+              <ul>
+                <li>
+                  <strong
+                    ><a href="https://unsplash.com/" target="_blank"
+                      >Unsplash</a
+                    ></strong
+                  >
+                  — HIGH-QUALITY FREE IMAGES
+                </li>
+                <li>
+                  <strong
+                    ><a href="https://www.vecteezy.com/" target="_blank"
+                      >Vecteezy</a
+                    ></strong
+                  >
+                  — VECTOR GRAPHICS AND ILLUSTRATIONS
+                </li>
+                <li>
+                  <strong
+                    ><a href="https://www.solarsystemscope.com/" target="_blank"
+                      >Solar System Scope</a
+                    ></strong
+                  >
+                  — SPACE VISUALS & TEXTURES
+                </li>
+              </ul>
+            </div>
+
+            <div class="credit-section">
+              <h3><span class="icon">🗺</span> MAPS & GEOLOCATION</h3>
+              <ul>
+                <li>
+                  <strong
+                    ><a href="https://leafletjs.com/" target="_blank"
+                      >Leaflet.js</a
+                    ></strong
+                  >
+                  — INTERACTIVE MAPS AND LOCATION VISUALIZATION
+                </li>
+              </ul>
+            </div>
+
+            <div class="credit-section">
+              <h3><span class="icon">🎨</span> ICONS & UI</h3>
+              <ul>
+                <li>
+                  <strong
+                    ><a href="https://www.freepik.com/" target="_blank"
+                      >Freepik</a
+                    ></strong
+                  >
+                  — ICONS AND UI GRAPHIC RESOURCES
+                </li>
+              </ul>
+            </div>
+
+            <div class="credit-section">
+              <h3><span class="icon">☁</span> WEATHER DATA</h3>
+              <ul>
+                <li>
+                  <strong
+                    ><a href="https://open-meteo.com/" target="_blank"
+                      >Open-Meteo</a
+                    ></strong
+                  >
+                  — FREE AND OPEN WEATHER FORECASTING API
+                </li>
+              </ul>
+            </div>
+
+            <div class="credit-section" id="aistudio">
+              <h3><span class="icon">🤖</span> AI SERVICES</h3>
+              <ul>
+                <li>
+                  <strong
+                    ><a href="https://aistudio.google.com/" target="_blank"
+                      >Google Gemini API</a
+                    ></strong
+                  >
+                  — GEMINI-2/2.5 INTELLIGENT WEATHER INSIGHTS AND PROCESSING
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="credit-footer">
+            <p>
+              THIS PROJECT IS BUILT FOR EDUCATIONAL AND NON-COMMERCIAL PURPOSES.
+              ALL THIRD-PARTY RESOURCES BELONG TO THEIR RESPECTIVE OWNERS.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="customAlert" class="custom-alert-overlay">
+      <div class="custom-alert-box">
+        <h2 class="custom-alert-title">NOTICE</h2>
+        <p class="custom-alert-message" id="alertMessage">
+          PLEASE SEARCH THE LOCATION FIRST!
+        </p>
+        <button class="custom-alert-btn" id="alertBtn">GOT IT</button>
+      </div>
+    </div>
+
+    <script>
+      const themeToggle = document.querySelector(".theme-toggle");
+      const body = document.body;
+      const mainDiv = document.querySelector(".main");
+
+      themeToggle.addEventListener("click", () => {
+        body.classList.toggle("dark");
+
+        if (body.classList.contains("dark")) {
+          body.style.backgroundImage =
+            "url('/static/credits/RESOURCES/TEXTURES/MILKY_WAY.jpg')";
+          mainDiv.style.backgroundImage =
+            "url('/static/credits/RESOURCES/TEXTURES/MILKY_WAY.jpg')";
+        } else {
+          body.style.backgroundImage =
+            "url('/static/credits/RESOURCES/SKY/SKY-5.jpg')";
+          mainDiv.style.backgroundImage =
+            "url('/static/credits/RESOURCES/SKY/SKY-5.jpg')";
+        }
+      });
+
+      document
+        .getElementById("todayLink")
+        .addEventListener("click", showNavAlert);
+      document
+        .getElementById("weeklyLink")
+        .addEventListener("click", showNavAlert);
+
+      const customAlert = document.getElementById("customAlert");
+      const alertMessage = document.getElementById("alertMessage");
+      const alertBtn = document.getElementById("alertBtn");
+
+      function showAlert(msg) {
+        if (msg) alertMessage.textContent = msg;
+        customAlert.classList.add("show");
+      }
+
+      function closeAlert() {
+        customAlert.classList.remove("show");
+      }
+
+      alertBtn.addEventListener("click", closeAlert);
+
+      customAlert.addEventListener("click", (e) => {
+        if (e.target === customAlert) {
+          closeAlert();
+        }
+      });
+
+      function showNavAlert(e) {
+        e.preventDefault();
+        showAlert("PLEASE SEARCH THE LOCATION FIRST! FROM HOME PAGE");
+      }
+    </script>
+  </body>
+</html>
