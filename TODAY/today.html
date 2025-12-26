@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TODAY | AI POWERED WEATHER WEB APP</title>
+    <link rel="stylesheet" href="/static/today/today.css?v=2" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/static/today/RESOURCES/APPLICATION_ICON/ICON3.png"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <nav class="navbar1">
+        <a href="/">HOME</a>
+        <a href="/today">TODAY</a>
+        <a href="/weekly">WEEKLY</a>
+        <a href="/maps">MAPS</a>
+        <a href="/about">ABOUT ME</a>
+      </nav>
+
+      <div class="theme-toggle">
+        <img
+          src="/static/today/RESOURCES/THEAME_SWITCHER/sun.png"
+          alt="Sun"
+          class="sun"
+        />
+        <img
+          src="/static/today/RESOURCES/THEAME_SWITCHER/MOON.png"
+          alt="Moon"
+          class="moon"
+        />
+        <div class="toggle-button" id="toggle-btn"></div>
+      </div>
+
+      <div class="today-container">
+        <div class="header-row">
+          <h2 id="cityNameHeader">DAILY INSIGHTS</h2>
+          <p id="dateInfo">LOADING...</p>
+        </div>
+
+        <div class="widget-grid">
+          <div class="widget">
+            <div class="widget-title">
+              <span class="icon">😷</span> AIR QUALITY
+            </div>
+            <div class="widget-value" id="aqiValue">--</div>
+            <div class="widget-sub" id="aqiStatus">LOADING...</div>
+            <div class="aqi-bar"><div class="aqi-fill" id="aqiFill"></div></div>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">
+              <span class="icon">☀️</span> UV INDEX
+            </div>
+            <div class="widget-value" id="uvValue">--</div>
+            <div class="widget-sub" id="uvStatus">LOADING...</div>
+            <div class="uv-bar"><div class="uv-fill" id="uvFill"></div></div>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">
+              <span class="icon">⏲️</span> PRESSURE
+            </div>
+            <div class="widget-value" id="pressureValue">-- hPa</div>
+            <div class="widget-arrow" id="pressureArrow">↓</div>
+          </div>
+
+          <div class="widget sun-widget">
+            <div class="widget-title">
+              <span class="icon">🌅</span> SUNRISE & SUNSET
+            </div>
+            <div class="sun-times">
+              <div class="sun-item">
+                <span>Sunrise</span>
+                <span class="time-val" id="sunriseVal">--:--</span>
+              </div>
+              <div class="sun-item">
+                <span>Sunset</span>
+                <span class="time-val" id="sunsetVal">--:--</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">
+              <span class="icon">👁️</span> VISIBILITY
+            </div>
+            <div class="widget-value" id="visibilityValue">-- km</div>
+            <div class="widget-sub" id="visibilityStatus">--</div>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">
+              <span class="icon">🌡️</span> FEELS LIKE
+            </div>
+            <div class="widget-value" id="feelsLikeValue">--°</div>
+            <div class="widget-sub">
+              Actual: <span id="actualTemp">--°</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/today/today.js?v=2"></script>
+
+    <script>
+      const themeToggle = document.querySelector(".theme-toggle");
+      const body = document.body;
+      const mainDiv = document.querySelector(".main");
+
+      themeToggle.addEventListener("click", () => {
+        body.classList.toggle("dark");
+        if (body.classList.contains("dark")) {
+          body.style.backgroundImage =
+            "url('/static/today/RESOURCES/TEXTURES/MILKY_WAY.jpg')";
+          mainDiv.style.backgroundImage =
+            "url('/static/today/RESOURCES/TEXTURES/MILKY_WAY.jpg')";
+        } else {
+          body.style.backgroundImage =
+            "url('/static/today/RESOURCES/CLOUD_BG_1/CLOUD_1.jpg')";
+          mainDiv.style.backgroundImage =
+            "url('/static/today/RESOURCES/CLOUD_BG_1/CLOUD_1.jpg')";
+        }
+      });
+    </script>
+  </body>
+</html>

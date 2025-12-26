@@ -1,0 +1,246 @@
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', 'Urbanist', sans-serif;
+}
+
+.main {
+    padding: 100px 20px 40px;
+    margin: 0;
+    background-image: url(RESOURCES/CLOUD_BG_1/CLOUD_1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  .navbar1 {
+    position: fixed;
+    top: 20px;
+    left: 30%;
+    transform: translateX(-50%);
+
+    width: 75%;
+    max-width: 650px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 28px;
+    padding: 0 32px;
+
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.45);
+    color: #ffffffcc;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.navbar1 a {
+    position: relative;
+    overflow: hidden;
+    color: #ffffffdd;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    transition: 0.25s ease;
+    font-size: 0.95rem;
+}
+
+.navbar1 a:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 35%;
+    width: 132px;
+    height: 50px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(5px);
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 11;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.45);
+}
+
+.toggle-button {
+    width: 50px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 35px;
+    position: absolute;
+    left: 5px;
+    transition: transform 0.35s ease;
+    z-index: 1;
+}
+
+.theme-toggle .sun {
+    position: absolute;
+    left: 15px;
+    z-index: 2;
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.theme-toggle .moon {
+    position: absolute;
+    right: 15px;
+    z-index: 2;
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.dark .toggle-button {
+    transform: translateX(70px);
+}
+
+.today-container {
+    width: 90%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header-row {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-row h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.widget-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+}
+
+@media (min-width: 800px) {
+    .widget-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1100px) {
+    .widget-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.widget {
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 180px; 
+    color: white;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: transform 0.2s ease;
+}
+
+.widget:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.widget-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #ffffffaa;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.widget-value {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.widget-sub {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.aqi-bar, .uv-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.aqi-fill, .uv-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+.aqi-good { background: #00e676; }
+.aqi-fair { background: #ffd600; }
+.aqi-poor { background: #ff3d00; }
+
+.widget-arrow {
+    font-size: 3rem;
+    align-self: flex-end;
+    margin-top: -40px;
+    opacity: 0.5;
+}
+
+.sun-times {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 10px;
+}
+
+.sun-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.time-val {
+    font-size: 1.5rem;
+    font-weight: 600;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            RESULT | AI POWERED WEATHER WEB APP
+        </title>
+        <link rel="stylesheet" href="/static/result/style2.css?v=2" />
+        <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.min.js"></script>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/static/result/RESOURCES/APPLICATION_ICON/ICON3.png"
+    />
+    </head>
+    <body>
+        <div class="main">
+            <nav class="navbar1">
+                <a href="/">HOME</a>
+                <a href="/today">TODAY</a>
+                <a href="/weekly">WEEKLY</a>
+                <a href="/maps">MAPS</a>
+                <a href="/about">ABOUT ME</a>
+            </nav>
+
+            <div class="theme-toggle">
+                <img src="/static/result/RESOURCES/THEAME_SWITCHER/sun.png" alt="Sun" class="sun" />
+                <img src="/static/result/RESOURCES/THEAME_SWITCHER/MOON.png" alt="Moon" class="moon" />
+                <div class="toggle-button" id="toggle-btn"></div>
+            </div>  
+
+        <div class="weather-section" id="weatherDisplay" style="display: none;">
+            <div class="glass-card">
+                <div class="weather-header">
+                    <h2 id="cityName">CURRENT WEATHER</h2>
+                    <p id="dateInfo">LOADING...</p>
+                </div>
+                
+                <div class="weather-grid">
+                    <div class="weather-item main-temp">
+                        <span class="label">TEMP</span>
+                        <div class="value" id="tempValue">--°C</div>
+                    </div>
+                    <div class="weather-item">
+                        <span class="label">WIND</span>
+                        <div class="value" id="windValue">-- km/h</div>
+                    </div>
+                    <div class="weather-item">
+                        <span class="label">HUMIDITY</span>
+                        <div class="value" id="humidityValue">--%</div>
+                    </div>
+                    <div class="weather-item">
+                        <span class="label">CONDITION</span>
+                        <div class="value" id="conditionValue">--</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="main-weekly">
+        <div class="weekly-section" id="weeklyDisplay" style="display: none;">
+            <div class="glass-card">
+                <div class="weekly-header">
+                    <h2>HOURLY FORECAST</h2>
+                </div>
+                
+                <div class="weekly-grid" id="hourlyGrid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="main-2">
+            <div class="MAPS">
+                <h2 class="map-title">LOCATION MAP :- </h2>
+                <div id="map" class="map"></div>
+            </div>
+        </div>
+
+        <div class="main-3">
+            <div class="orbit-sim">
+                <h2 class="topic-title">ORBIT SIMULATION :-</h2>
+                <div class="orbit-box">
+                    <canvas id="orbitCanvas"></canvas>
+                </div>
+            </div>            
+        </div>
+
+        <div id="customScrollbar" class="custom-scroll-container">
+        </div>
+
+        <script src="/static/result/main2.js?v=2"></script> 
+    </body>
+</html>

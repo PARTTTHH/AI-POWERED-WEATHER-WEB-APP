@@ -1,0 +1,248 @@
+* {
+    padding:0;
+    margin:0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', 'Urbanist', sans-serif;
+}
+
+
+.main {
+    padding: 0;
+    padding-top: 15px;
+    margin: 0;
+    background-image: url(RESOURCES/CLOUD_BG_1/CLOUD_1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+  .navbar1 {
+    position: fixed;
+    top: 20px;
+    left: 30%;
+    transform: translateX(-50%);
+
+    width: 75%;
+    max-width: 650px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 28px;
+    padding: 0 32px;
+
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.45);
+    color: #ffffffcc;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.navbar1 a {
+    position: relative;
+    overflow: hidden;
+    color: #ffffffdd;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    padding: 10px 16px;
+
+    border-radius: 12px;
+    transition: 0.25s ease;
+    font-size: 0.95rem;
+    z-index: 10;
+}
+
+.navbar1 a:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 35%;
+    width: 120px;
+    height: 38px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(5px);
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 11;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.45);
+  }
+  
+  .toggle-button {
+    width: 50px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 35px;
+    position: absolute;
+    left: 5px;
+    transition: transform 0.35s ease;
+    z-index: 1;
+  }
+  
+  .theme-toggle .sun {
+    position: absolute;
+    left: 15px;
+    z-index: 2;
+    width: 25px;
+    height: 205x;
+    object-fit: contain;
+    pointer-events: none;
+  }
+  
+  .theme-toggle .moon {
+    position: absolute;
+    right: 15px;
+    z-index: 2;
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+  
+  .dark .toggle-button {
+    transform: translateX(70px);
+  }
+
+.weekly-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+}
+
+.glass-card {
+    width: 90%;
+    max-width: 950px;
+    background: rgba(0, 0, 0, 0.137);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(5px);
+    border-radius: 25px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+    padding: 30px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.weekly-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.weekly-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+}
+
+.toggle-options {
+    display: flex;
+    gap: 10px;
+}
+
+.toggle-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 12px;
+    color: #d9e6ffcc;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.toggle-btn.active {
+    background: #ffffff;
+    color: #333;
+    border-color: #ffffff;
+}
+
+.weekly-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.day-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 15px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.2s;
+}
+
+.day-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.day-name {
+    font-size: 0.9rem;
+    color: #d9e6ffcc;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.day-icon {
+    font-size: 1.5rem;
+}
+
+.day-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.day-sub {
+    font-size: 0.75rem;
+    color: #aaa;
+}
+
